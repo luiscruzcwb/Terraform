@@ -1,3 +1,7 @@
+#Provisionando um contêiner do servidor NGINX com arquivos apply. 
+#Quando o Terraform solicitar que você confirme, digite yes e pressione ENTER.
+#Verifique a existência do contêiner NGINX visitando localhost:8000 em seu navegador da web ou executando 'docker ps -a' para ver o contêiner.
+
 terraform {
   required_providers {
     docker = {
