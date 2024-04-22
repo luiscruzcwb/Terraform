@@ -37,7 +37,7 @@ resource "aws_security_group" "allow_ports" {
        cidr_blocks = ["0.0.0.0/0"]
    }
   
-   tags {
+   tags = {
        Name = "Allow SSH and HTTP"
    }
 }
@@ -54,7 +54,7 @@ resource "aws_instance" "webserver" {
    subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
    user_data              = "${file("scripts/init.sh")}"
   
-   tags {
+   tags = {
        Name = "Webserver"
    }
 }

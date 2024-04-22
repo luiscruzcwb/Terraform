@@ -1,23 +1,23 @@
 variable "aws_region" {
    description = "AWS Region to launch servers"
-   default = "eu-west-2"
+   default = "us-east-1a"
 }
 
 variable "aws_access_key" {
    description = "AWS User Access Key"
-   default = "XXXXXXXXXXXXXXXXXX"
+   default = "" # Access key ID
 }
 
 variable "aws_secret_key" {
    description = "AWS User Secret Key"
-   default = "XXXXXXXXXXXXXXXXXX"
+   default = "" # Secret access key
 }
 
 
 variable "aws_amis" {
    default = {
-       us-east-1 = "ami-058bd2d568351da34" # Debian 12
-       eu-west-2 = "ami-04e5276ebb8451442" # Amazon Linux 2023 AMI
+       us-east-1a = "ami-058bd2d568351da34"
+       us-east-1b = "ami-058bd2d568351da34"    
    }
 }
 
@@ -28,12 +28,12 @@ variable "instance_type" {
 
 variable "public_key_path" {
    description = "Enter the path to the SSH Public Key to add to AWS."
-   default     = "~/.ssh/yourkey.pem"
+   default     = "" # Key SSH
 }
 
 variable "key_name" {
    description = "AWS key name"
-   default     = "name of keypair"
+   default     = "" # EC2 Key Pairs name 
 }
 
 variable "instance_count" {
