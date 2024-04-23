@@ -18,7 +18,7 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
  - terraform destroy
  - terraform output
  - terraform login [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
- 
+
 
 O fluxo de trabalho principal do Terraform tem três etapas:
 
@@ -26,15 +26,17 @@ O fluxo de trabalho principal do Terraform tem três etapas:
 2.  **Plan** - Visualize as alterações antes de aplicar.
 3.  **Apply** – Provisionar infraestrutura reproduzível.
 
+#### Links
+
 [Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
 
 #### Solução de problemas - AWS
 
-Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você pode encontrar um destes erros comuns.
+Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você pode encontrar um destes erros comuns:
 
- Se você usar uma região diferente, também precisará alterar seu ami, já que os IDs de AMI são específicos da região. 
+- Se você usar uma região diferente, também precisará alterar seu ami, já que os IDs de AMI são específicos da região. 
 
- Se você não tiver uma VPC padrão em sua conta da AWS na região correta, navegue até o AWS VPC Dashboard na web, crie uma nova VPC em sua região e associe uma sub-rede e um grupo de segurança a essa VPC. Em seguida, adicione os argumentos ID do grupo de segurança ( vpc_security_group_ids) e ID da sub-rede (subnet_id) ao seu aws_instance recurso e substitua os valores pelos do seu novo grupo de segurança e sub-rede.
-
+- Se você não tiver uma VPC padrão em sua conta da AWS na região correta, navegue até o AWS VPC Dashboard na web, crie uma nova VPC em sua região e associe uma sub-rede e um grupo de segurança a essa VPC. Em seguida, adicione os argumentos ID do grupo de segurança ( vpc_security_group_ids) e ID da sub-rede (subnet_id) ao seu aws_instance recurso e substitua os valores pelos do seu novo grupo de segurança e sub-rede.
 
 #### Solução de problemas - GCP
+
