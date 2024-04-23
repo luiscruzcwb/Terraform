@@ -54,7 +54,6 @@ Em seu terminal, use a **gcloud CLI** para configurar suas credenciais padrão d
 gcloud auth application-default login
 ```
 
-```sh
-Credentials saved to file: [/home/"username"/.config/gcloud/application_default_credentials.json]
-```
+> Credentials saved to file: `--[/home/"username"/.config/gcloud/application_default_credentials.json]`
+
 
