@@ -30,6 +30,12 @@ O fluxo de trabalho principal do Terraform tem três etapas:
 
 [Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
 
+[O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
+
+[The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
+
+
+
 #### Solução de problemas - AWS
 
 Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você pode encontrar um destes erros comuns:
@@ -39,4 +45,16 @@ Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você
 - Se você não tiver uma VPC padrão em sua conta da AWS na região correta, navegue até o AWS VPC Dashboard na web, crie uma nova VPC em sua região e associe uma sub-rede e um grupo de segurança a essa VPC. Em seguida, adicione os argumentos ID do grupo de segurança ( vpc_security_group_ids) e ID da sub-rede (subnet_id) ao seu aws_instance recurso e substitua os valores pelos do seu novo grupo de segurança e sub-rede.
 
 #### Solução de problemas - GCP
+
+O Terraform precisa se autenticar no Google Cloud para criar infraestrutura.
+
+Em seu terminal, use a **gcloud CLI** para configurar suas credenciais padrão do aplicativo .
+
+```sh 
+gcloud auth application-default login
+```
+
+```sh
+Credentials saved to file: [/home/"username"/.config/gcloud/application_default_credentials.json]
+```
 
