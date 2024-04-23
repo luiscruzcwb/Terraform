@@ -8,9 +8,32 @@ terraform {
 }
 
 provider "google" {
-  project = "appchat-420713" 
+  credentials = file(var.credentials_file)
+  project = var.project
+  region  = var.region
+  zone    = var.zone  
+  
 }
 
 resource "google_compute_network" "vpc_network" {
   name = "terraform-network"
+}
+
+resource "google_compute_instance" "vm_instance" {
+  name         = "terraform-instance"
+  machine_type = "f1-micro"
+  zone         = "us-central1-c"
+  tags         = ["web", "dev"]
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+
+  network_interface {
+    network = google_compute_network.vpc_network.name
+    access_config {
+    }
+  }
 }
