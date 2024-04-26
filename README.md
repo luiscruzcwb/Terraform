@@ -8,15 +8,15 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 
 #### Principais comandos 
 
- - terraform init  
- - terraform fmt 
- - terraform validate 
- - terraform plan
- - terraform apply / --auto-approve
- - terraform show
- - terraform state list
- - terraform destroy
- - terraform output
+- terraform init: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
+ - terraform fmt: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
+ - terraform validate: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
+ - terraform plan: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
+ - terraform apply / --auto-approve: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
+ - terraform show: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
+ - terraform state list: Lista todos os recursos gerenciados pelo Terraform no estado atual.
+ - terraform destroy: Destroi todos os recursos gerenciados pelo Terraform no ambiente especificado.
+ - terraform output: Mostra os valores de saída definidos em seus arquivos de configuração do Terraform.
  - terraform login [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
 
 
@@ -33,6 +33,8 @@ O fluxo de trabalho principal do Terraform tem três etapas:
 [O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
 
 [The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
+
+[Terraform Registry](https://registry.terraform.io/)
 
 
 
