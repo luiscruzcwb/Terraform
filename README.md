@@ -1,5 +1,6 @@
 ## Terraform
-  Projetos e estudos sobre Terraform. 
+  Projetos e estudos sobre Terraform.
+   
 ![enter image description here](https://community.ops.io/images/kPkJMHU_OVH3f2mMZFaaiSSFMeewKiPzFM7L_hhuzEs/rs:fill:1000:420/g:sm/mb:500000/ar:1/aHR0cHM6Ly9jb21t/dW5pdHkub3BzLmlv/L3JlbW90ZWltYWdl/cy91cGxvYWRzL2Fy/dGljbGVzL2xwajdq/ZHlvcGs1d2U3ZzJy/NG42LnBuZw)
 
 #### Anotações  
@@ -8,17 +9,24 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 
 #### Principais comandos 
 
-- terraform init: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
- - terraform fmt: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
- - terraform validate: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
- - terraform plan: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
- - terraform apply / --auto-approve: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
- - terraform show: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
- - terraform state list: Lista todos os recursos gerenciados pelo Terraform no estado atual.
- - terraform destroy: Destroi todos os recursos gerenciados pelo Terraform no ambiente especificado.
- - terraform output: Mostra os valores de saída definidos em seus arquivos de configuração do Terraform.
- - terraform login [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
-
+- **terraform init**: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
+ - **terraform fmt**: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
+ - **terraform validate**: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
+ - **terraform plan**: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
+ - **terraform apply** / --auto-approve: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
+ - **terraform show**: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
+ - **terraform state list:** Lista todos os recursos gerenciados pelo Terraform no estado atual.
+ - **terraform destroy**: Destroi todos os recursos gerenciados pelo Terraform no ambiente especificado.
+ - **terraform output**: Mostra os valores de saída definidos em seus arquivos de configuração do Terraform.
+ - **terraform login** [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
+ - **terraform get**: Baixa e instala os módulos necessários para o projeto.
+ - **terraform graph**: Gera uma representação visual do relacionamento entre os recursos de infraestrutura definidos nos arquivos de configuração do Terraform.
+ - **terraform import**: Importa um recurso existente para o estado do Terraform.
+ - **terraform refresh**: Atualiza o estado do Terraform para refletir o estado atual da infraestrutura real.
+ - **terraform taint**: Marca um recurso gerenciado pelo Terraform como "sujos" (tainted), forçando-o a ser destruído e recriado na próxima execução do terraform apply.
+ - **terraform untaint**: Remove a marca "sujos" (tainted) de um recurso, permitindo que ele seja gerenciado normalmente pelo Terraform.
+ - **terraform workspace**: Gerencia workspaces (espaços de trabalho) do Terraform, permitindo a criação de ambientes isolados para testes, desenvolvimento ou produção.
+ - **terraform version**: Exibe a versão atual do Terraform instalada no sistema.
 
 O fluxo de trabalho principal do Terraform tem três etapas:
 
@@ -28,15 +36,15 @@ O fluxo de trabalho principal do Terraform tem três etapas:
 
 #### Links
 
-[Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
-
-[O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
-
-[The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
+[Terraform CLI](https://developer.hashicorp.com/terraform/cli)
 
 [Terraform Registry](https://registry.terraform.io/)
 
+[Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
 
+[The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
+
+[O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
 
 #### Solução de problemas - AWS
 
