@@ -7,9 +7,10 @@
 
 O **Terraform** é uma ferramenta de infraestrutura como código que permite definir e gerenciar recursos de infraestrutura por meio de arquivos de configuração legíveis por humanos. O Terraform permite que você use um fluxo de trabalho consistente durante o ciclo de vida da infraestrutura, independentemente do provedor de recursos. A infraestrutura como fluxo de trabalho de código permite gerenciar declarativamente uma variedade de serviços e automatizar suas alterações neles, reduzindo o risco de erro humano por meio de operações manuais.
 
-#### Principais comandos 
+#### Principais comandos
 
-- **terraform init**: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
+ - **terraform -help**
+ - **terraform init**: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
  - **terraform fmt**: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
  - **terraform validate**: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
  - **terraform plan**: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
@@ -34,18 +35,6 @@ O fluxo de trabalho principal do Terraform tem três etapas:
 2.  **Plan** - Visualize as alterações antes de aplicar.
 3.  **Apply** – Provisionar infraestrutura reproduzível.
 
-#### Links
-
-[Terraform CLI](https://developer.hashicorp.com/terraform/cli)
-
-[Terraform Registry](https://registry.terraform.io/)
-
-[Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
-
-[The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
-
-[O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
-
 #### Solução de problemas - AWS
 
 Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você pode encontrar um destes erros comuns:
@@ -66,4 +55,14 @@ gcloud auth application-default login
 
 > Credentials saved to file: [/home/"username"/.config/gcloud/application_default_credentials.json]
 
+#### Links
 
+[Terraform CLI](https://developer.hashicorp.com/terraform/cli)
+
+[Terraform Registry](https://registry.terraform.io/)
+
+[Provider Requirements](https://developer.hashicorp.com/terraform/language/providers/requirements)
+
+[The Core Terraform Workflow](https://developer.hashicorp.com/terraform/intro/v1.1.x/core-workflow)
+
+[O que é HCP Terraform - introdução e inscrição](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
