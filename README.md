@@ -14,7 +14,8 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
  - **terraform fmt**: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
  - **terraform validate**: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
  - **terraform plan**: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
- - **terraform apply** / --auto-approve: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
+ - **terraform apply** / **--auto-approve**: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
+ - **terraform apply -var="instance_type=t2.small"**: Exemplo de uso da opção "-var", para alterações via CLI.  
  - **terraform show**: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
  - **terraform state list:** Lista todos os recursos gerenciados pelo Terraform no estado atual.
  - **terraform destroy**: Destroi todos os recursos gerenciados pelo Terraform no ambiente especificado.
