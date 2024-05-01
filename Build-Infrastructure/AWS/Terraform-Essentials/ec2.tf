@@ -42,8 +42,6 @@ resource "aws_instance" "server1" {
 #   }
 # }
 
-
-
 # Criar usando hardcoding # 
 
 # resource "aws_instance" "server1" {

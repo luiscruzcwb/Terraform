@@ -13,6 +13,13 @@ provider "aws" {
   region = "us-east-1"
 }
 
+# Criar em multiplas regioes #
+
+# provider "aws" { 
+#   alias = "east-2"
+#   region = "us-east-2"
+# }
+
 terraform { 
   backend "s3" { 
     bucket = "terraform-essentials-luiscruz"  # Lembre de trocar o bucket para o seu
@@ -21,11 +28,5 @@ terraform {
   }
 }
 
-# Caso tenha algum erro, verifique as "Permissions policies" no painel de IAM da AWS
 
-# Criar em multiplas regioes #
-
-# provider "aws" { 
-#   alias = "east-2"
-#   region = "us-east-2"
-# }
+# Caso tenha algum erro no S3, verifique as "Permissions policies" no painel de IAM da AWS
