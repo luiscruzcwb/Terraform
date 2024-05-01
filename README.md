@@ -7,6 +7,12 @@
 
 O **Terraform** é uma ferramenta de infraestrutura como código que permite definir e gerenciar recursos de infraestrutura por meio de arquivos de configuração legíveis por humanos. O Terraform permite que você use um fluxo de trabalho consistente durante o ciclo de vida da infraestrutura, independentemente do provedor de recursos. A infraestrutura como fluxo de trabalho de código permite gerenciar declarativamente uma variedade de serviços e automatizar suas alterações neles, reduzindo o risco de erro humano por meio de operações manuais.
 
+#### O fluxo de trabalho principal do Terraform tem três etapas:
+
+1.  **Write / Escrever** - Crie a infraestrutura como código.
+2.  **Plan / Planejar** - Visualize as alterações antes de aplicar.
+3.  **Apply / Aplicar** – Provisionar infraestrutura reproduzível.
+
 #### Syntax
 
 1.  **Blocks / Blocos**
@@ -14,7 +20,7 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 3.  **Identifiers / Identificadores**
 4.  **Comments / Comentarios** (# // /* and */)
 5.  **Expressions / Expressoes** (Types and Values)
-
+6.  **References / Referencias**
 
 #### Principais comandos
 
@@ -27,10 +33,11 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
  - **terraform apply** / **--auto-approve**: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
  - **terraform apply -var="instance_type=t2.small"**: Exemplo de uso da opção "-var", para alterações via CLI.  
  - **terraform show**: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
+ - **terraform console**: Permite a interação interativa com a configuração do Terraform.
  - **terraform state list:** Lista todos os recursos gerenciados pelo Terraform no estado atual.
  - **terraform destroy**: Destroi todos os recursos gerenciados pelo Terraform no ambiente especificado.
  - **terraform output**: Mostra os valores de saída definidos em seus arquivos de configuração do Terraform.
- - **terraform login** [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
+ - **terraform login**: [HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started/cloud-sign-up)
  - **terraform get**: Baixa e instala os módulos necessários para o projeto.
  - **terraform graph**: Gera uma representação visual do relacionamento entre os recursos de infraestrutura definidos nos arquivos de configuração do Terraform.
  - **terraform import**: Importa um recurso existente para o estado do Terraform.
@@ -40,13 +47,7 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
  - **terraform workspace**: Gerencia workspaces (espaços de trabalho) do Terraform, permitindo a criação de ambientes isolados para testes, desenvolvimento ou produção.
  - **terraform version**: Exibe a versão atual do Terraform instalada no sistema.
 
-O fluxo de trabalho principal do Terraform tem três etapas:
-
-1.  **Write / Escrever** - Crie a infraestrutura como código.
-2.  **Plan / Planejar** - Visualize as alterações antes de aplicar.
-3.  **Apply / Aplicar** – Provisionar infraestrutura reproduzível.
-
-#### Solução de problemas - AWS
+#### AWS - Solução de problemas
 
 Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você pode encontrar um destes erros comuns:
 
@@ -54,7 +55,7 @@ Se **terraform validate** foi bem-sucedido e sua aplicação ainda falhou, você
 
 - Se você não tiver uma VPC padrão em sua conta da AWS na região correta, navegue até o AWS VPC Dashboard na web, crie uma nova VPC em sua região e associe uma sub-rede e um grupo de segurança a essa VPC. Em seguida, adicione os argumentos ID do grupo de segurança ( vpc_security_group_ids) e ID da sub-rede (subnet_id) ao seu aws_instance recurso e substitua os valores pelos do seu novo grupo de segurança e sub-rede.
 
-#### Solução de problemas - GCP
+#### GCP - Solução de problemas
 
 O Terraform precisa se autenticar no Google Cloud para criar infraestrutura.
 
