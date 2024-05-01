@@ -7,13 +7,23 @@
 
 O **Terraform** é uma ferramenta de infraestrutura como código que permite definir e gerenciar recursos de infraestrutura por meio de arquivos de configuração legíveis por humanos. O Terraform permite que você use um fluxo de trabalho consistente durante o ciclo de vida da infraestrutura, independentemente do provedor de recursos. A infraestrutura como fluxo de trabalho de código permite gerenciar declarativamente uma variedade de serviços e automatizar suas alterações neles, reduzindo o risco de erro humano por meio de operações manuais.
 
+#### Syntax
+
+1.  **Blocks / Blocos**
+2.  **Arguments / Argumentos** 
+3.  **Identifiers / Identificadores**
+4.  **Comments / Comentarios** (# // /* and */)
+5.  **Expressions / Expressoes** (Types and Values)
+
+
 #### Principais comandos
 
  - **terraform -help**
- - **terraform init**: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
+
+ - **terraform init** / **-upgrade**: Inicializa um diretório de trabalho do Terraform, baixando os plugins necessários e preparando o ambiente para uso.
  - **terraform fmt**: Formata os arquivos de configuração do Terraform para seguir um estilo de formatação padrão.
  - **terraform validate**: Verifica a sintaxe e a semântica dos arquivos de configuração do Terraform.
- - **terraform plan**: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
+ - **terraform plan** / **-out**: Gera um plano de execução que descreve as alterações que o Terraform planeja realizar.
  - **terraform apply** / **--auto-approve**: Aplica as alterações definidas nos arquivos de configuração do Terraform ao ambiente de destino.
  - **terraform apply -var="instance_type=t2.small"**: Exemplo de uso da opção "-var", para alterações via CLI.  
  - **terraform show**: Mostra uma representação humanamente legível do estado atual do ambiente gerenciado pelo Terraform.
@@ -32,9 +42,9 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 
 O fluxo de trabalho principal do Terraform tem três etapas:
 
-1.  **Write** - Crie a infraestrutura como código.
-2.  **Plan** - Visualize as alterações antes de aplicar.
-3.  **Apply** – Provisionar infraestrutura reproduzível.
+1.  **Write / Escrever** - Crie a infraestrutura como código.
+2.  **Plan / Planejar** - Visualize as alterações antes de aplicar.
+3.  **Apply / Aplicar** – Provisionar infraestrutura reproduzível.
 
 #### Solução de problemas - AWS
 
