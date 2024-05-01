@@ -15,12 +15,13 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 
 #### Syntax
 
-1.  **Blocks / Blocos**
-2.  **Arguments / Argumentos** 
-3.  **Identifiers / Identificadores**
-4.  **Comments / Comentarios** (# // /* and */)
-5.  **Expressions / Expressoes** (Types and Values)
-6.  **References / Referencias**
+1.  **Blocks**
+2.  **Arguments** 
+3.  **Identifiers**
+4.  **Comments** (# // /* and */)
+5.  **Expressions** (Types and Values)
+6.  **References**
+7.  **Source Addresses** (Hostname / Namespace / Type)
 
 #### Principais comandos
 

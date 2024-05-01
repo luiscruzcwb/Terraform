@@ -2,7 +2,7 @@
 
 terraform {
   required_providers {
-    aws = {
+    aws = { 
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
@@ -22,3 +22,10 @@ terraform {
 }
 
 # Caso tenha algum erro, verifique as "Permissions policies" no painel de IAM da AWS
+
+# Criar em multiplas regioes #
+
+# provider "aws" { 
+#   alias = "east-2"
+#   region = "us-east-2"
+# }
