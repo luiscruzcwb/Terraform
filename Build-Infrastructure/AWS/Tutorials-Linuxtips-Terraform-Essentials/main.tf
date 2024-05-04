@@ -2,7 +2,7 @@
 
 terraform {
   required_providers {
-    aws = { 
+    aws = {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
@@ -13,12 +13,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Criar em multiplas regioes #
+# Criar em múltiplas regiões #
 
-# provider "aws" { 
-#   alias = "east-2"
-#   region = "us-east-2"
-# }
+provider "aws" {
+  alias  = "west"
+  region = "us-west-1"
+}
 
 terraform { 
   backend "s3" { 

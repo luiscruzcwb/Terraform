@@ -1,0 +1,1 @@
+https://www.linuxtips.io/course/terraform-essentials
