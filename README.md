@@ -22,6 +22,7 @@ O **Terraform** é uma ferramenta de infraestrutura como código que permite def
 5.  **Expressions** (Types and Values)
 6.  **References**
 7.  **Source Addresses** (Hostname / Namespace / Type)
+8.  **Variable** 
 
 #### Principais comandos
 
