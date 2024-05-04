@@ -1,0 +1,58 @@
+#### Quais os blocos de código, que juntos são usados para configurar o state file remoto?
+ 
+ 
+terraform e state 
+provider e state 
+terraform e backend 
+resource e state 
+resource e backend
+
+Resposta correta
+terraform e backend
+
+#### O uso de provisioners é aconselhável no Terraform?
+ 
+ 
+Sim 
+Não
+
+Resposta correta
+Não
+
+#### Qual bloco de código usado para configurar o provider?
+ 
+ 
+upstream 
+provedor 
+terraform 
+resource 
+provider
+
+Resposta correta
+provider
+
+#### Qual endereço usado para acessar uma variável "version" que você criou no seu código terraform?
+ 
+ 
+$version 
+TF_VAR_VERSION
+version 
+var.version 
+variable.version
+
+Resposta correta
+var.version
+
+#### Qual o formato de arquivos usado pelo terraform para descrever suas ações?
+ 
+ 
+YML 
+HCL 
+JSON 
+XML 
+DOC
+
+Resposta correta
+HCL
+
+
