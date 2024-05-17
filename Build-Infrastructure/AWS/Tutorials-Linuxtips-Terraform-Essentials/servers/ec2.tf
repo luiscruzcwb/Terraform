@@ -33,6 +33,7 @@ data "aws_ami" "ubuntu_west" {
 }
 
 resource "aws_instance" "server-us-west-1" {
+# count         = var.servers #Servers terrafile.tf
   provider      = aws.west
   ami           = data.aws_ami.ubuntu_west.id
   instance_type = "t2.micro"

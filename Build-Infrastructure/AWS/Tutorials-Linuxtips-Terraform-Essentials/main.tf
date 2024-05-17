@@ -10,14 +10,14 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1" # Substitua pela região desejada
 }
 
 # Criar em múltiplas regiões #
 
 provider "aws" {
   alias  = "west"
-  region = "us-west-1"
+  region = "us-west-1" # Substitua pela região desejada
 }
 
 terraform { 
