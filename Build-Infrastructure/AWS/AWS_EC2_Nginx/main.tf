@@ -1,60 +1,57 @@
-provider "aws" {
-   access_key = var.aws_access_key
-   secret_key = var.aws_secret_key
-   region = var.aws_region
-   skip_credentials_validation = true
+resource "aws_instance" "nginx" {
+  ami           = "ami-04b70fa74e45c3917" # Ubuntu, 24.04 LTS, amd64, verifique se é a mais recente para sua região
+  instance_type = "t2.micro"
+  subnet_id     = module.vpc.public_subnets[0]
+  associate_public_ip_address = true
+
+  tags = {
+    Name = "nginx-server"
+  }
+
+  user_data = <<-EOF
+              #!/bin/bash
+              # Instalando Docker
+              sudo apt-get remove docker docker-engine docker.io -y
+              sudo apt-get update -y
+              sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+              curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+              sudo apt-key fingerprint 0EBFCD88
+              sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+              sudo apt-get update -y
+              sudo apt-get install docker-ce -y
+              sudo usermod -aG docker $USER
+              sudo systemctl enable docker
+              sudo systemctl restart docker
+              sudo docker run --name docker-nginx -p 80:80 -d nginx:latest
+              EOF
+
+  key_name = var.key_name
+
+  vpc_security_group_ids = [aws_security_group.nginx_sg.id]
 }
 
-#SecurityGroups
+resource "aws_security_group" "nginx_sg" {
+  vpc_id = module.vpc.vpc_id
+  name_prefix = "nginx-sg-"
 
-resource "aws_security_group" "allow_ports" {
-   name        = "allow_ssh_http"
-   description = "Allow inbound SSH traffic and http from any IP"
-   vpc_id      = "${module.vpc.vpc_id}"
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-   #ssh access
-   ingress {
-       from_port   = 22
-       to_port     = 22
-       protocol    = "tcp"
-       # Restrict ingress to necessary IPs/ports.
-       cidr_blocks = ["0.0.0.0/0"]
-   }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-   # HTTP access
-   ingress {
-       from_port   = 80
-       to_port     = 80
-       protocol    = "tcp"
-       # Restrict ingress to necessary IPs/ports.
-       cidr_blocks = ["0.0.0.0/0"]
-   }
-
-   egress {
-       from_port   = 0
-       to_port     = 0
-       protocol    = "-1"
-       cidr_blocks = ["0.0.0.0/0"]
-   }
-  
-   tags = {
-       Name = "Allow SSH and HTTP"
-   }
-}
-
-
-#WebServerNginx
-
-resource "aws_instance" "webserver" {
-   instance_type          = "${var.instance_type}"
-   ami                    = "${lookup(var.aws_amis, var.aws_region)}"
-   count                  = "${var.instance_count}"
-   key_name               = "${var.key_name}"
-   vpc_security_group_ids = ["${aws_security_group.allow_ports.id}"]
-   subnet_id              = "${element(module.vpc.public_subnets,count.index)}"
-   user_data              = "${file("scripts/init.sh")}"
-  
-   tags = {
-       Name = "Webserver"
-   }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
